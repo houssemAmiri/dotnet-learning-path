@@ -206,6 +206,84 @@ Console.WriteLine("-------------------------------------------------------------
 Console.WriteLine("******************List<T>***********************");
 
 
+List<int> numbers = new List<int>();
+Console.WriteLine(numbers.Capacity); // Outputs: 0
+numbers.Add(1);
+numbers.Add(2);
+numbers.Add(3);
+numbers.AddRange(new int[] { 4, 5, 6 }); // AddRange adds multiple elements at once
+numbers.Insert(0, 0); // Insert adds an element at a specific index
+numbers.Remove(2); // Remove removes the first occurrence of the specified value
+numbers.RemoveAt(0); // RemoveAt removes the element at the specified index
+numbers.Clear(); // Clear removes all elements from the list
+numbers.Add(1);
+bool exists = numbers.Contains(1); // Contains checks if the list contains the specified value
+Console.WriteLine(exists); // Outputs: True
+numbers.Sort(); // Sort sorts the elements in ascending order
+numbers.Reverse(); // Reverse reverses the order of the elements
+numbers.Sort((x, y) => x.CompareTo(y)); // Sort with a custom comparison function
+Console.WriteLine(numbers.Capacity); // Outputs: 8
+
+// numbers.Add("hello"); // ❌ Compile-time error: Argument type 'string' doesn't match 'int'
+
+Console.WriteLine($"count: {numbers.Count}"); // Outputs: 1
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+List<string> names = new List<string>();
+names.Add("Alice");
+names.Add("Bob");
+names.Add("Charlie");
+// names.Add(42); // ❌ Compile-time error: Argument type 'int' doesn't match 'string'
+Console.WriteLine(names.Count); // Outputs: 3
+foreach (var nameElement in names)
+{
+    Console.WriteLine(nameElement);
+}
+
+
+
+
+List<int> numbers2 = new List<int> { 1, 2, 3, 4, 5 };
+List<string> names2 = new List<string> { "Alice", "Bob", "Charlie" };
+
+List<Person> people = new List<Person>();
+people.Add(new Person { Age = 30 });
+people.Add(new Person { Age = 40 });
+people.Add(new Person { Age = 50 });
+foreach (var person in people)
+{
+    Console.WriteLine(person.Age);
+}
+
+
+/*
+
+✅ Avoid Remove in Loops
+Removing items inside a loop leads to index shifting.
+
+Use list.RemoveAll() for bulk removal.
+
+*/
+
+
+numbers.RemoveAll(x => x > 3); // Remove all elements greater than 3
+
+/*
+✅ Use Sort and BinarySearch for Efficient Searches
+If your list is sorted, you can use binary search:
+
+*/
+
+
+numbers.Sort(); // Sort the list first
+int index = numbers.BinarySearch(3); // Binary search for the value 3
+Console.WriteLine(index); // Outputs: index of the value 3 or -1 if not found
+
+
 
 
 
