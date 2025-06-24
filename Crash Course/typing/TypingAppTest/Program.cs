@@ -286,7 +286,48 @@ Console.WriteLine(index); // Outputs: index of the value 3 or -1 if not found
 
 
 
+// searching on the list 
 
+
+// For single element search, use methods like Contains, IndexOf, Find, or FindIndex.
+
+// For complex conditions, use Find or LINQ (FirstOrDefault).
+
+// For sorted lists, use BinarySearch for high performance.
+
+
+
+List<int> numbers3 = new List<int> { 1, 2, 3, 4, 5 };
+bool exist = numbers3.Contains(3); // true
+
+Console.WriteLine($"exist: {exist}");
+
+// use of index
+
+int foundIndex = numbers3.IndexOf(4); // 3
+int notFound = numbers3.IndexOf(10); // -1
+
+// LastIndexOf for finding lastoccurence
+
+List<int> numbers4 = new List<int> { 1, 2, 3, 2, 1 };
+int lastIndex = numbers.LastIndexOf(2); // 3
+
+// advanced search with condition: 
+
+// use Find and FindIndex for complex conditon best for finding the first match that meets condition
+// use a predicate lambda expression
+
+List<string> names3 = new List<string> { "Henda", "Houssem", "Souad", "Houcine" };
+
+string? nameFind = names3.Find(n => n.StartsWith("H"));
+
+Console.WriteLine($"nameFind: {nameFind}");
+
+int indexName = names3.FindIndex(n => n.Length > 5);
+Console.WriteLine($"indexName: {indexName}");
+
+
+// Use FindAll for Multiple Matches
 
 // classes here
 class Person
