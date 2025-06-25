@@ -1,7 +1,9 @@
 ﻿
 using System.ComponentModel;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
+
 
 // ************************************  int *************************************
 Console.WriteLine("******************int type example***********************");
@@ -328,6 +330,87 @@ Console.WriteLine($"indexName: {indexName}");
 
 
 // Use FindAll for Multiple Matches
+
+List<int> numbers5 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+List<int> evenNumbers = numbers5.FindAll(n => n % 2 == 0);
+
+Console.WriteLine($"even numbers {evenNumbers}");
+
+foreach (var number in evenNumbers)
+{
+    Console.WriteLine($"even numbers {number}");
+
+}
+
+
+// using Link 
+
+List<int> numbers6 = new List<int> { 1, 2, 3, 4, 5 };
+
+int first = numbers6.First(n => n > 3);
+
+int firstOrDefault = numbers6.FirstOrDefault(n => n > 10);
+
+int single = numbers6.Single(n => n == 3);
+
+Console.WriteLine($"first: {first} | firstOrDefault: {firstOrDefault} | single: {single}");
+
+
+// using where for multiple mathches : 
+
+var evenNumbersList = numbers5.Where(n => n % 2 == 0).ToList();
+
+Console.WriteLine($"evenNumbersList: {evenNumbersList}");
+
+
+// 💡 When to Use Each Method
+// Use Contains or IndexOf for simple searches.
+
+// Use BinarySearch for sorted lists.
+
+// Use Find/FindIndex for conditional searches.
+
+// Use LINQ for complex queries or multiple matches.
+
+// Use FindAll for bulk filtering.
+
+
+// Real world TODO with list
+
+
+
+
+
+
+var myTodoList = new TodoList();
+
+myTodoList.AddTask("Hello world c#");
+myTodoList.AddTask("Build project");
+myTodoList.PrintTasks();
+
+
+class TodoList
+{
+    private List<string> tasks = new List<string>();
+
+    public void AddTask(string task)
+    {
+        tasks.Add(task);
+    }
+    public void RemoveTask(string task)
+    {
+        tasks.Remove(task);
+    }
+    public void PrintTasks()
+    {
+        Console.WriteLine("Your Tasks");
+        foreach (var taks in tasks)
+        {
+            Console.WriteLine("- " + taks);
+        }
+    }
+}
 
 // classes here
 class Person
