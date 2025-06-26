@@ -390,6 +390,33 @@ myTodoList.AddTask("Build project");
 myTodoList.PrintTasks();
 
 
+List<Product> products = new List<Product>
+{
+    new Product {Name = "Laptop", Price = 1000},
+    new Product {Name = "Phone", Price = 500},
+    new Product {Name = "Tablet", Price = 300},
+
+};
+
+// Find product by name 
+
+Product? phone = products.Find(p => p.Name == "Phone");
+
+Console.WriteLine("phone: " + phone?.Name);
+
+// Find all product bellow 600 
+
+List<Product> affordableProducts = products.FindAll(p => p.Price < 600);
+Console.WriteLine("affordableProducts: " + affordableProducts);
+
+
+// using LINQ
+
+Product? expensive = products.FirstOrDefault(p => p.Price > 900);
+
+Console.WriteLine("expensive: " + expensive?.Name);
+
+
 class TodoList
 {
     private List<string> tasks = new List<string>();
@@ -410,6 +437,12 @@ class TodoList
             Console.WriteLine("- " + taks);
         }
     }
+}
+
+class Product
+{
+    public required string Name { get; set; }
+    public decimal Price { get; set; }
 }
 
 // classes here
