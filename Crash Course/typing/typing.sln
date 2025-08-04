@@ -1,8 +1,10 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypingAppTest", "TypingAppTest\TypingAppTest.csproj", "{A28508C2-F015-294C-E32E-8BC40CAAA949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefValueType", "RefValueType\RefValueType.csproj", "{FF4AD94B-C5E8-48C2-BE9E-3C7BB022FF11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{A28508C2-F015-294C-E32E-8BC40CAAA949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A28508C2-F015-294C-E32E-8BC40CAAA949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A28508C2-F015-294C-E32E-8BC40CAAA949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4AD94B-C5E8-48C2-BE9E-3C7BB022FF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4AD94B-C5E8-48C2-BE9E-3C7BB022FF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4AD94B-C5E8-48C2-BE9E-3C7BB022FF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4AD94B-C5E8-48C2-BE9E-3C7BB022FF11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
